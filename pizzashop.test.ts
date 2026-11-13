@@ -3,9 +3,9 @@ import { createPizza, orderPizza, sendOrder } from "./pizzashop";
 
 describe("Pizza Shop Unit Tests", () => {
   test("createPizza returns correct type and price", () => {
-    const pizza = createPizza("margherita");
+    const pizza = createPizza("vegetarian");
 
-    expect(pizza).toEqual({ type: "margherita", price: 100 });
+    expect(pizza).toEqual({ type: "vegetarian", price: 110 });
   });
 
   test("createPizza throws for unknown type", () => {
