@@ -6,4 +6,10 @@ describe("Pizza Shop Integration Test", () => {
     const result = orderPizza("margherita");
     expect(result).toBe(true);
   });
+
+  test("orderPizza returns true for a vegetarian pizza", () => {
+    const result = orderPizza("vegetarian");
+
+    expect(result).toBe(true);
+  });
 });
