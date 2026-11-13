@@ -27,7 +27,7 @@ describe("Pizza Shop Unit Tests", () => {
     expect(result).toBe(true);
   });
 
-  test("orderPizza returns true for a valid pizza", () => {
+  test("orderPizza returns true for a vegetarian pizza", () => {
     const result = orderPizza("vegetarian");
 
     expect(result).toBe(true);
