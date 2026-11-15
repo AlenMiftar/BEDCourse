@@ -5,3 +5,14 @@ const catalogue = {
   neuromancer: { title: "neuromancer", copiesAvailable: 1 },
   foundation: { title: "foundation", copiesAvailable: 0 },
 };
+
+// Schemas
+export const BookTitleSchema = z.enum(["dune", "neuromancer", "foundation"]);
+
+export const BookSchema = z.object({
+  title: BookTitleSchema,
+  copiesAvailable: z.number().int().nonnegative(),
+});
+
+// Types inferred from the schemas
+export type Book = z.infer<typeof BookSchema>;
