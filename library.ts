@@ -16,3 +16,8 @@ export const BookSchema = z.object({
 
 // Types inferred from the schemas
 export type Book = z.infer<typeof BookSchema>;
+
+export const findBook = (title: unknown): Book => {
+  const bookTitle = BookTitleSchema.parse(title);
+  return BookSchema.parse(catalogue[bookTitle]);
+};
