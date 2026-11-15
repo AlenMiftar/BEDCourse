@@ -13,3 +13,7 @@ answear: it was a spelling mistake in the error message. The word "customer" was
 Question: Why use toEqual and not toBe when you compare objects?
 
 answear: We use toEqual because it compares the values and properties inside objects. toBe checks if two variables reference the exact same object in memory. Since Zod returns a new object when parsing, toEqual is the correct choice to check that the objects have the same data.
+
+Question: Your "between 1000 and 9999" test uses a random number. Could it pass by luck even if the code were wrong? What could you do to make it more trustworthy?
+
+answear: Yes, the test could pass by luck even if the code was incorrect, because Math.random() generates different values each time. To make the test more trustworthy, we can mock Math.random() using vi.spyOn() and provide a fixed return value. This makes the test predictable and allows us to check the exact expected result.
