@@ -17,3 +17,7 @@ answear: We use toEqual because it compares the values and properties inside obj
 Question: Your "between 1000 and 9999" test uses a random number. Could it pass by luck even if the code were wrong? What could you do to make it more trustworthy?
 
 answear: Yes, the test could pass by luck even if the code was incorrect, because Math.random() generates different values each time. To make the test more trustworthy, we can mock Math.random() using vi.spyOn() and provide a fixed return value. This makes the test predictable and allows us to check the exact expected result.
+
+Question: In the "foundation" test, the error comes from checkOutBook, but you only called borrowBook. What does that show you about how errors travel through a chain of functions?
+
+answear: It shows that errors can travel up through a chain of function calls. When checkOutBook throws an error, borrowBook does not catch it, so the error is passed back to the caller. This means we can test errors from internal functions by testing the main function that calls them.
